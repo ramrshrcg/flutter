@@ -5,11 +5,14 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
+// ignore_for_file: unused_import, duplicate_ignore
+
 import 'package:expense_tracker_app/model/expense.dart';
 import 'package:expense_tracker_app/widgets/expenses.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+// ignore: unused_import
 import 'package:expense_tracker_app/main.dart';
 
 void main() {
