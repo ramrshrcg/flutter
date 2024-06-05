@@ -1,7 +1,9 @@
+import 'package:expense_tracker_app/widgets/expenses_list/chart/chart.dart';
 import 'package:expense_tracker_app/widgets/expenses_list/expenses_list.dart';
 import 'package:flutter/material.dart';
 import 'package:expense_tracker_app/model/expense.dart';
 import 'package:expense_tracker_app/widgets/new_expense.dart';
+
 
 class Expenses extends StatefulWidget {
   const Expenses({super.key});
@@ -16,6 +18,12 @@ class _ExpensesState extends State<Expenses> {
   final List<Expense> _registeredExpenses = [
     //there is a expenses that to
     //be displayed in the app in front page
+     Expense(
+      title: 'Flutter Course',
+      amount: 19.99,
+      date: DateTime.now(),
+      category: Category.work,
+    ),
   ];
 
   void _openAddExpenseOverlay() {
@@ -68,7 +76,7 @@ class _ExpensesState extends State<Expenses> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Expense Tracker '),
-        backgroundColor: const Color.fromARGB(255, 190, 98, 206),
+       
         actions: [
           IconButton(
             onPressed: () {
@@ -80,7 +88,7 @@ class _ExpensesState extends State<Expenses> {
       ),
       body: Column(
         children: [
-          const Text('THE EXPENSES'),
+          Chart(expenses: _registeredExpenses),
           Expanded(
             child: mainContent,
           ),
